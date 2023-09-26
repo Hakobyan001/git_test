@@ -1,1 +1,1 @@
-export { default as GatewayController } from './gateway.controller';
+// export { default as GatewayController } from './gateway.controller';

@@ -1,1 +1,1 @@
-export { default as GatewayService } from './gateway.service';
+// export { default as GatewayService } from './gateway.service';

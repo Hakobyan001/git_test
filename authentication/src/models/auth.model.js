@@ -15,12 +15,9 @@ class UsersModel extends Model {
       type: 'object',
       properties: {
         id: { type: 'integer' },
-        firstname: { type: 'string', minLength: 1, maxLength: 255 },
-        lastname: { type: 'string', minLength: 5, maxLength: 255 },
-        password: { type: 'string', minLength: 3, maxLength: 255 },
-        username: { type: 'string', minLength: 1, maxLength: 255 },
-        role: { type: 'string', enum: Object.values(Role) },
-        status: { type: 'string', enum: Object.values(Status) }
+        fullName: { type: 'string', minLength: 3, maxLength: 255 },
+        email: { type: 'string', minLength: 1, maxLength: 255 },
+        password: { type: 'string', minLength: 5, maxLength: 255 }
       }
     };
   }
@@ -32,13 +29,11 @@ class UsersModel extends Model {
   }
 
   $beforeInsert() {
-    const date = new Date();
-    this.created_at = date;
+    this.created_at = new Date();
   }
 
   $beforeUpdate() {
-    const date = new Date();
-    this.updated_at = date;
+    this.updated_at = new Date();
   }
 
   // Methods
@@ -51,7 +46,7 @@ class UsersModel extends Model {
   }
 
   static create(payload) {
-    return UsersModel.query().insert(payload);
+    return UsersModel.query().insert(payload).returning('*');
   }
 
   static edit(id, update) {
@@ -67,6 +62,10 @@ class UsersModel extends Model {
 
   static findByUsername(username) {
     return UsersModel.query().findOne({ username });
+  }
+
+  static findByEmail(email) {
+    return UsersModel.query().findOne({ email });
   }
 
   static findByUsernameWithStatus(username) {

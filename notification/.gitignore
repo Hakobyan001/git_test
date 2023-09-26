@@ -1,0 +1,10 @@
+.*postgres
+!.gitignore
+!.babelrc
+!.eslintrc.json
+*.swp
+
+node_modules/
+/package-lock.json
+.env
+Dockerfile

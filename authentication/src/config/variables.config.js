@@ -7,7 +7,7 @@ const config = {
   DISABLE_REQUEST_LOG: process.env.DISABLE_REQUEST_LOG,
   CORS: process.env.CORS?.split(',') || '*',
   END_DATE: '2053-12-05',
-  HOST: process.env.LOCAL_HOST,
+  HOST: process.env.LOCALHOST,
   PSQL: {
     PORT: process.env.PSQL_PORT,
     HOST: process.env.PSQL_HOST,
@@ -29,7 +29,13 @@ const config = {
     IMAGE_PATH: process.env.IMAGE_PATH,
     VIDEO_PATH: process.env.VIDEO_PATH,
     USER_PATH: process.env.USER_PATH
+  },
+
+  START_AUTH: {
+    REGISTER_EXP_TIME: process.env.REGISTER_EXP_TIME,
+    ACTIVATION_EXP_TIME: process.env.ACTIVATION_EXP_TIME
   }
+
 };
 
 export default config;

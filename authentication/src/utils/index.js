@@ -4,3 +4,4 @@ export { default as CryptoUtil } from './crypto.util';
 export { default as HttpStatusCodesUtil } from './http-status-codes.util';
 export { default as ErrorsUtil } from './errors.util';
 export { default as DateFormatUtil } from './date-format.util';
+export { default as RegisterVerificationCode } from './generate-verification-code.util';

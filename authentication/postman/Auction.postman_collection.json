@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "9f953a8b-e3bd-4e35-b155-619256c6b9aa",
+		"name": "Auction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18588645"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Narek Petrosyan\",\r\n    \"email\": \"nr.petrosyan96@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/api/v1/auth/signUp",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoiTmFyZWsgUGV0cm9zeWFuIiwicmVnaXN0ZXJFeHBUaW1lIjoiMjAyMy0wOS0yNVQxNDo0OTo1NS40MDNaIiwiYWN0aXZhdGlvbkV4cFRpbWUiOiIyMDIzLTA5LTI1VDE0OjQ5OjU1LjQwM1oiLCJhY3RpdmF0aW9uQ29kZSI6ImRQa2YiLCJpYXQiOjE2OTU2NTMzOTUsImV4cCI6MTY5NTY1Njk5NX0.Qqmfj4aOskYTohVfAc_MmK2LSu0aGR0ek57-ZnqUUCU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activationCode\": \"dPkf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/api/v1/auth/activationCode",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"activationCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoiTmFyZWsgUGV0cm9zeWFuIiwic3RhcnREYXRlIjoiMjAyMy0wOS0yNVQwNzoxNzozMS4wMzNaIiwiYWNjZXNzRGF0ZSI6IjIwMjMtMDktMjVUMDc6MTc6MzEuMDMzWiIsImFjdGl2YXRpb25Db2RlIjoiazE5MyIsImlhdCI6MTY5NTYyNjI1MSwiZXhwIjoxNjk1NjI5ODUxfQ.1MEDz9qfS4osvcVUgs3yKx-CEWgj-7Z8CcA7QNAoJWY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/api/v1/auth/resend",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3RpdmF0aW9uQ29kZSI6ImRQa2YiLCJlbWFpbCI6Im5yLnBldHJvc3lhbjk2QGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoiTmFyZWsgUGV0cm9zeWFuIiwiaWF0IjoxNjk1NjUzNDM4LCJleHAiOjE2OTU2NTcwMzh9.1bdPdv87oxCbl8T8FqfNWF0CstH2AO3CDC3fUpmtF88",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"F5de3d4cb5!\",\r\n    \"repeat_password\": \"F5de3d4cb5!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/api/v1/auth/createUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
